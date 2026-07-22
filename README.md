@@ -1,6 +1,6 @@
 # 💰 Finance Tracker API
 
-A RESTful Finance Tracker API built with **Spring Boot** and **MySQL** for managing personal finance transactions. This project demonstrates CRUD operations, exception handling, and bulk transaction management using Spring Data JPA.
+A RESTful Finance Tracker API built with **Spring Boot** and **MySQL** for managing personal finance transactions. This project demonstrates RESTful CRUD operations, DTO architecture, validation, global exception handling, and bulk transaction management using Spring Data JPA.
 
 ---
 
@@ -9,9 +9,11 @@ A RESTful Finance Tracker API built with **Spring Boot** and **MySQL** for manag
 - Java 21
 - Spring Boot
 - Spring Data JPA
+- Hibernate
 - MySQL
 - Maven
 - Lombok
+- Jakarta Bean Validation
 - Git
 - GitHub
 - Postman
@@ -74,11 +76,16 @@ http://localhost:8080
 - ✅ Partially update a transaction (PATCH)
 - ✅ Delete a transaction
 - ✅ Bulk insert multiple transactions
-- ✅ Global exception handling
-- ✅ Custom error response
-- ✅ Spring Data JPA integration
-- ✅ MySQL database integration
-- ✅ Environment variable support for database password
+- ✅ DTO Architecture (Request & Response DTOs)
+- ✅ Entity to DTO and DTO to Entity Mapping
+- ✅ Input Validation using Jakarta Bean Validation
+- ✅ Validation for Bulk Requests
+- ✅ Global Exception Handling
+- ✅ Custom Exception Handling
+- ✅ Structured Validation Error Responses
+- ✅ Spring Data JPA Integration
+- ✅ MySQL Database Integration
+- ✅ Environment Variable Support for Database Password
 
 ---
 
@@ -96,10 +103,46 @@ http://localhost:8080
 
 ---
 
+## ✅ Validation
+
+The API validates incoming requests before processing them.
+
+Supported validations include:
+
+- Title cannot be blank
+- Amount must be greater than 0
+- Type cannot be blank
+- Category cannot be blank
+- Date is required
+
+Bulk requests also provide detailed validation responses indicating the index of the invalid object.
+
+Example:
+
+```json
+{
+  "errors": [
+    {
+      "index": 0,
+      "field": "type",
+      "message": "Type is required"
+    },
+    {
+      "index": 1,
+      "field": "title",
+      "message": "Title cannot be blank"
+    }
+  ]
+}
+```
+
+---
+
 ## 🗄️ Database
 
 - MySQL
 - Spring Data JPA
+- Hibernate ORM
 - Automatic table creation using Hibernate
 
 ---
@@ -110,17 +153,22 @@ http://localhost:8080
 
 - REST CRUD APIs
 - Bulk Insert API
+- DTO Architecture
+- Entity ↔ DTO Mapping
+- Input Validation
+- Bulk Request Validation
 - Global Exception Handling
-- Custom Exception
+- Custom Exception Handling
+- Custom Validation Error Responses
 - MySQL Integration
 - Environment Variable Configuration
 
 ### 🚧 Upcoming Features
 
-- Input Validation
-- DTOs
+- Swagger / OpenAPI Documentation
 - Pagination & Sorting
 - Search & Filter APIs
+- Logging
 - Spring Security & JWT Authentication
 - Unit Testing
 - Docker
