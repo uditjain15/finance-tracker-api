@@ -1,10 +1,12 @@
 # 💰 Finance Tracker API
 
-A RESTful Finance Tracker API built with **Spring Boot** and **MySQL** for managing personal finance transactions. This project demonstrates RESTful CRUD operations, DTO architecture, validation, global exception handling, and bulk transaction management using Spring Data JPA.
+A RESTful Finance Tracker API built with **Spring Boot** and **MySQL** for managing personal finance transactions.
+
+This project demonstrates modern Spring Boot backend development practices including RESTful CRUD operations, DTO architecture, validation, global exception handling, Swagger/OpenAPI documentation, and bulk transaction management using Spring Data JPA.
 
 ---
 
-## 🚀 Technologies Used
+# 🚀 Technologies Used
 
 - Java 21
 - Spring Boot
@@ -14,13 +16,14 @@ A RESTful Finance Tracker API built with **Spring Boot** and **MySQL** for manag
 - Maven
 - Lombok
 - Jakarta Bean Validation
+- Swagger / OpenAPI (SpringDoc)
 - Git
 - GitHub
 - Postman
 
 ---
 
-## 📋 Prerequisites
+# 📋 Prerequisites
 
 - Java 21 or later
 - MySQL 8+
@@ -29,7 +32,7 @@ A RESTful Finance Tracker API built with **Spring Boot** and **MySQL** for manag
 
 ---
 
-## 🔐 Environment Variable
+# 🔐 Environment Variable
 
 Before running the application, create the following environment variable:
 
@@ -39,25 +42,31 @@ DB_PASSWORD=your_mysql_password
 
 ---
 
-## ▶️ Running the Application
+# ▶️ Running the Application
 
-1. Clone the repository.
+### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/uditjain15/finance-tracker-api.git
 ```
 
-2. Navigate to the project directory.
+### 2. Navigate to the project directory
 
 ```bash
 cd finance-tracker-api
 ```
 
-3. Create the `DB_PASSWORD` environment variable.
+### 3. Create the environment variable
 
-4. Start the MySQL server.
+```text
+DB_PASSWORD=your_mysql_password
+```
 
-5. Run the Spring Boot application.
+### 4. Start MySQL
+
+Ensure your MySQL server is running.
+
+### 5. Run the application
 
 The application will start at:
 
@@ -67,7 +76,23 @@ http://localhost:8080
 
 ---
 
-## 📌 Features
+# 📖 API Documentation
+
+Swagger UI is available after starting the application.
+
+```text
+http://localhost:8080/swagger-ui/index.html
+```
+
+OpenAPI JSON:
+
+```text
+http://localhost:8080/v3/api-docs
+```
+
+---
+
+# ✨ Features
 
 - ✅ Create a transaction
 - ✅ Get all transactions
@@ -76,20 +101,21 @@ http://localhost:8080
 - ✅ Partially update a transaction (PATCH)
 - ✅ Delete a transaction
 - ✅ Bulk insert multiple transactions
-- ✅ DTO Architecture (Request & Response DTOs)
-- ✅ Entity to DTO and DTO to Entity Mapping
-- ✅ Input Validation using Jakarta Bean Validation
-- ✅ Validation for Bulk Requests
+- ✅ DTO Architecture
+- ✅ Entity ↔ DTO Mapping
+- ✅ Input Validation
+- ✅ Bulk Request Validation
 - ✅ Global Exception Handling
 - ✅ Custom Exception Handling
 - ✅ Structured Validation Error Responses
+- ✅ Swagger / OpenAPI Documentation
 - ✅ Spring Data JPA Integration
 - ✅ MySQL Database Integration
-- ✅ Environment Variable Support for Database Password
+- ✅ Environment Variable Support
 
 ---
 
-## 🌐 REST API Endpoints
+# 🌐 REST API Endpoints
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
@@ -103,7 +129,7 @@ http://localhost:8080
 
 ---
 
-## ✅ Validation
+# ✅ Validation
 
 The API validates incoming requests before processing them.
 
@@ -117,7 +143,7 @@ Supported validations include:
 
 Bulk requests also provide detailed validation responses indicating the index of the invalid object.
 
-Example:
+Example response:
 
 ```json
 {
@@ -138,7 +164,7 @@ Example:
 
 ---
 
-## 🗄️ Database
+# 🗄️ Database
 
 - MySQL
 - Spring Data JPA
@@ -147,11 +173,11 @@ Example:
 
 ---
 
-## 📈 Project Status
+# 📈 Project Status
 
-### ✅ Completed
+## ✅ Completed
 
-- REST CRUD APIs
+- RESTful CRUD APIs
 - Bulk Insert API
 - DTO Architecture
 - Entity ↔ DTO Mapping
@@ -159,23 +185,27 @@ Example:
 - Bulk Request Validation
 - Global Exception Handling
 - Custom Exception Handling
-- Custom Validation Error Responses
+- Structured Validation Error Responses
 - MySQL Integration
 - Environment Variable Configuration
-
-### 🚧 Upcoming Features
-
 - Swagger / OpenAPI Documentation
+
+## 🚧 Upcoming Features
+
 - Pagination & Sorting
 - Search & Filter APIs
 - Logging
 - Spring Security & JWT Authentication
-- Unit Testing
+- Unit & Integration Testing
 - Docker
 - Deployment
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
-**Udit Jain**
+**Udit K Jain**
+
+- 📧 Email: jainudit647@gmail.com
+- 💼 LinkedIn: https://www.linkedin.com/in/udit-k-jain-03bbbb245/
+- 💻 GitHub: https://github.com/uditjain15
